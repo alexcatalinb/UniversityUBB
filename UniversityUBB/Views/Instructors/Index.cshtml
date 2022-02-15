@@ -4,19 +4,19 @@
     ViewData["Title"] = "Instructors";
 }
 
-<h2>Instructors</h2>
+<h2>Profesori</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Adauga profesor nou</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Hire Date</th>
-            <th>Office</th>
-            <th>Courses</th>
+            <th>Prenume</th>
+            <th>Nume</th>
+            <th>Data angajarii</th>
+            <th>Locatie</th>
+            <th>Cursuri predate</th>
             <th></th>
         </tr>
     </thead>
@@ -51,10 +51,10 @@
                     }
                 </td>
                 <td>
-                    <a asp-action="Index" asp-route-id="@item.ID">Select</a> |
-                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    <a asp-action="Index" asp-route-id="@item.ID">Selecteaza</a> |
+                    <a asp-action="Edit" asp-route-id="@item.ID">Editeaza</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Detalii</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Sterge</a>
                 </td>
             </tr>
            }
@@ -62,13 +62,13 @@
 </table>
 @if (Model.Courses != null)
 {
-    <h3>Courses Taught by Selected Instructor</h3>
+    <h3>Cursuri predate de profesorul selectat</h3>
     <table class="table">
         <tr>
             <th></th>
-            <th>Number</th>
-            <th>Title</th>
-            <th>Department</th>
+            <th>ID curs</th>
+            <th>Titlu</th>
+            <th>Departament</th>
         </tr>
 
         @foreach (var item in Model.Courses)
@@ -99,12 +99,12 @@
 @if (Model.Enrollments != null)
 {
     <h3>
-        Students Enrolled in Selected Course
+        Studenti inscrisi la curs
     </h3>
     <table class="table">
         <tr>
-            <th>Name</th>
-            <th>Grade</th>
+            <th>Nume</th>
+            <th>Calificativ</th>
         </tr>
         @foreach (var item in Model.Enrollments)
         {
